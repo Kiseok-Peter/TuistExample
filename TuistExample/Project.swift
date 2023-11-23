@@ -42,8 +42,9 @@ let targets = [Project.createTarget(name: name,
                                         "Resources/**"
                                     ],
                                     dependencies: [
-                                        .project(target: "TuistExampleKit", path: "../Modules/TuistExampleKit"),
-                                        .project(target: "TuistExampleUI", path: "../Modules/TuistExampleUI")
+                                        .project(target: "TuistExampleKit", path: .relativeToRoot("Modules/TuistExampleKit")),
+                                        .project(target: "TuistExampleUI", path: .relativeToRoot("Modules/TuistExampleUI")),
+                                        .project(target: "CommonFoundation", path: .relativeToRoot("Modules/Common/CommonFoundation"))
                                     ]),
                Project.createTarget(name: "\(name)Tests",
                                     product: .unitTests,

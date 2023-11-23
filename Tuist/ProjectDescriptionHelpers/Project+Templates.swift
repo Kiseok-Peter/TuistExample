@@ -16,6 +16,7 @@ extension Project {
         - name: 타겟 이름 설정.
         - platform: 타겟 플랫폼 설정. default iOS
         - product: 타겟 product 설정. (ex: app, unitTest, framework 등...)
+        - deploymentTargetVersion: 타겟 deployment 버전. default 15.0
         - infoPlist: info.plist 설정
         - sources: 소스 경로 설정
         - resources: 리소스 경로 설정
@@ -26,6 +27,7 @@ extension Project {
     public static func createTarget(name: String,
                                     platform: Platform = .iOS,
                                     product: Product,
+                                    deploymentTargetVersion: String = "15.0",
                                     infoPlist: InfoPlist = .default,
                                     sources: SourceFilesList,
                                     resources: ResourceFileElements? = nil,
@@ -36,6 +38,7 @@ extension Project {
                platform: platform, // 타겟 플랫폼 설정
                product: product, // 타겟 product 설정 (ex: app, unitTest, framework 등...)
                bundleId: "\(bundleName).\(name)",
+               deploymentTarget: .iOS(targetVersion: deploymentTargetVersion, devices: [.iphone, .ipad]),
                infoPlist: infoPlist, // info.plist 설정
                sources: sources, // 소스 경로 설정
                resources: resources, // 리소스 경로 설정
