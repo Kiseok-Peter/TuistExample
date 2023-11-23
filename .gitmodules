@@ -1,0 +1,3 @@
+[submodule "Modules/Common/CommonFoundation"]
+	path = Modules/Common/CommonFoundation
+	url = git@github.com:Kiseok-Peter/CommonFoundation.git
