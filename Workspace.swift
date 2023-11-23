@@ -9,8 +9,8 @@ import ProjectDescription
 
 let workspace = Workspace(name: "TuistExample",
                           projects: [
-                            "TuistExample",
-                            "Modules/TuistExampleKit",
-                            "Modules/TuistExampleUI",
-                            "Modules/Common/CommonFoundation"
+                            .relativeToRoot("TuistExample"),
+                            .relativeToRoot("Modules/TuistExampleKit"),
+                            .relativeToRoot("Modules/TuistExampleUI"),
+                            .relativeToRoot("Modules/Common/CommonFoundation")
                           ])
