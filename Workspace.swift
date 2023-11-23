@@ -11,5 +11,6 @@ let workspace = Workspace(name: "TuistExample",
                           projects: [
                             "TuistExample",
                             "Modules/TuistExampleKit",
-                            "Modules/TuistExampleUI"
+                            "Modules/TuistExampleUI",
+                            "Modules/Common/CommonFoundation"
                           ])
