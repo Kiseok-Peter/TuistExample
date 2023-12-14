@@ -1,25 +1,28 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
-import MyPlugin
+import TuistTemplate
 
 // MARK: - Project
 
-// Local plugin loaded
-let localHelper = LocalHelper(name: "MyPlugin")
-
 let name = "TuistExampleUI"
+let organizationName = "kr.kiseok"
 
-let targets = [Project.createTarget(name: name,
-                                    product: .framework,
-                                    sources: [
-                                        "Sources/**"
-                                    ]),
-               Project.createTarget(name: "\(name)Tests",
-                                    product: .unitTests,
-                                    sources: [
-                                        "Tests/**"
-                                    ],
-                                    dependencies: [.target(name: name)])]
+let targets = [Target(name: name,
+                      product: .framework,
+                      bundleName: organizationName,
+                      sources: [
+                        "Sources/**"
+                      ],
+                      resources: [
+                        "Resources/**"
+                      ]),
+               Target(name: "\(name)Tests",
+                      product: .unitTests,
+                      bundleName: organizationName,
+                      sources: [
+                        "Tests/**"
+                      ],
+                      dependencies: [.target(name: name)])]
 
 let project = Project(name: name,
                       targets: targets)
