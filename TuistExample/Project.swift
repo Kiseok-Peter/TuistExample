@@ -1,57 +1,56 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
-import MyPlugin
-
-/*
-                +-------------+
-                |             |
-                |     App     | Contains TuistExample App target and TuistExample unit-test target
-                |             |
-         +------+-------------+-------+
-         |         depends on         |
-         |                            |
- +----v-----+                   +-----v-----+
- |          |                   |           |
- |   Kit    |                   |     UI    |   Two independent frameworks to share code and start modularising your app
- |          |                   |           |
- +----------+                   +-----------+
-
- */
-
-// MARK: - Project
-
-// Local plugin loaded
-let localHelper = LocalHelper(name: "MyPlugin")
+import TuistTemplate
 
 let name = "TuistExample"
+let organizationName = "kr.kiseok"
 
-let infoPlist: [String: InfoPlist.Value] = [
+// MARK: - Info.plist
+
+let infoPlist: [String: Plist.Value] = [
     "CFBundleShortVersionString": "1.0",
     "CFBundleVersion": "1",
     "UIMainStoryboardFile": "",
     "UILaunchStoryboardName": "LaunchScreen"
 ]
 
-let targets = [Project.createTarget(name: name,
+// MARK: - Configurations
+
+let configurations = Configuration.default([
+    .release(name: "DebugView", settings: ["SWIFT_OPTIMIZATION_LEVEL": "-Onone"])
+])
+
+// MARK: - Target
+
+let targets = [Target(name: name,
+                      destinations: .iOS,
                                     product: .app,
-                                    infoPlist: .extendingDefault(with: infoPlist),
-                                    sources: [
-                                        "Sources/**"
-                                    ],
-                                    resources: [
-                                        "Resources/**"
-                                    ],
-                                    dependencies: [
-                                        .project(target: "TuistExampleKit", path: .relativeToRoot("Modules/TuistExampleKit")),
-                                        .project(target: "TuistExampleUI", path: .relativeToRoot("Modules/TuistExampleUI")),
-                                        .project(target: "CommonFoundation", path: .relativeToRoot("Modules/Common/CommonFoundation"))
-                                    ]),
-               Project.createTarget(name: "\(name)Tests",
-                                    product: .unitTests,
-                                    sources: [
-                                        "Tests/**"
-                                    ],
-                                    dependencies: [.target(name: name)])]
+                      bundleName: organizationName,
+                      infoPlist: .extendingDefault(with: infoPlist),
+                      sources: [
+                        "Sources/**"
+                      ],
+                      resources: [
+                        "Resources/**"
+                      ],
+                      dependencies: [
+                        .project(target: "TuistExampleKit", path: .relativeToRoot("Modules/TuistExampleKit")),
+                        .project(target: "TuistExampleUI", path: .relativeToRoot("Modules/TuistExampleUI")),
+                        .project(target: "CommonFoundation", path: .relativeToRoot("Modules/Common/CommonFoundation"))
+                      ],
+                      settings: .settings(configurations: configurations)),
+               Target(name: "\(name)Tests",
+                      destinations: .iOS,
+                      product: .unitTests,
+                      bundleName: organizationName,
+                      sources: [
+                        "Tests/**"
+                      ],
+                      dependencies: [.target(name: name)])]
+
+// MARK: - Project
 
 let project = Project(name: name,
-                      targets: targets)
+                      organizationName: organizationName,
+                      targets: targets,
+                      schemes: [Scheme(name: name, targetName: name, isAddTest: true)])
