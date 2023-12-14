@@ -1,6 +1,7 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
 import TuistTemplate
+import ResourceSynthesizerStrings
 
 let name = "TuistExample"
 let organizationName = "kr.kiseok"
@@ -53,4 +54,5 @@ let targets = [Target(name: name,
 let project = Project(name: name,
                       organizationName: organizationName,
                       targets: targets,
-                      schemes: [Scheme(name: name, targetName: name, isAddTest: true)])
+                      schemes: [Scheme(name: name, targetName: name, isAddTest: true)],
+                      resourceSynthesizers: .default + [.strings])
