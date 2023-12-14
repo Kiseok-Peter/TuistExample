@@ -1,0 +1,11 @@
+"account_screen_description_error_email" = "メールアドレスの形式が正しくありません";
+"account_screen_description_error_password" = "パスワード形式が正しくありません";
+"account_setting_popup_title_signout" = "ログアウトしますか？\nすべてのチャット履歴が削除されます";
+"account_setting_screen_label_connected_by_apple" = "Appleでログイン";
+"account_setting_screen_label_connected_by_facebook" = "Facebookでログイン";
+"account_setting_screen_label_connected_by_kakao" = "カカオトークでログイン";
+"account_setting_screen_label_connected_by_line" = "LINEでログイン";
+"account_setting_screen_label_connected_by_twitter" = "Twitterでログイン";
+"account_setting_screen_label_signout" = "ログアウト";
+"account_setting_screen_title" = "アカウント設定";
+"account" = "Account";

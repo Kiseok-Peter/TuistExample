@@ -1,0 +1,10 @@
+"birth_screen_label_birth_format" = "yyyy年 M月 d日";
+"birth_screen_label_horoscope_guide" = "生年月日を入力すれば星座がわかります";
+"birthday_list_screen_button_add" = "誕生日情報を追加";
+"birthday_list_screen_date_format" = "yyyy-MM-dd HH:mm";
+"birthday_list_screen_deleted_toast" = "誕生日情報は削除されました。";
+"birthday_list_screen_empty" = "保存された誕生日情報はありません。";
+"birthday_list_screen_icon_delete_alert" = "%@ の誕生日情報を削除してもよろしいですか？";
+"birthday_list_screen_title" = "誕生日リスト";
+"birthday_popup_label_dateofbirth" = "生年月日";
+"birthday_popup_label_dateofbirth_date_format" = "yyyy.MM.dd";

@@ -1,0 +1,10 @@
+"birth_screen_label_birth_format" = "MMM d, yyyy";
+"birth_screen_label_horoscope_guide" = "Enter your date of birth to see your horoscope";
+"birthday_list_screen_button_add" = "Add Birthday Information";
+"birthday_list_screen_date_format" = "yyyy-MM-dd HH:mm";
+"birthday_list_screen_deleted_toast" = "The birthday information has been deleted.";
+"birthday_list_screen_empty" = "There is no saved birthday information.";
+"birthday_list_screen_icon_delete_alert" = "Are you sure you want to delete the birthday information for %@?";
+"birthday_list_screen_title" = "Birthday List";
+"birthday_popup_label_dateofbirth" = "Date of Birth";
+"birthday_popup_label_dateofbirth_date_format" = "yyyy.MM.dd";

@@ -1,0 +1,10 @@
+"account_screen_description_error_email" = "This is an invalid email address";
+"account_screen_description_error_password" = "This is an invalid password";
+"account_setting_popup_title_signout" = "Log out? \nYou will lose your conversations with your friends ";
+"account_setting_screen_label_connected_by_apple" = "Connected with Apple";
+"account_setting_screen_label_connected_by_facebook" = "Connected to Facebook";
+"account_setting_screen_label_connected_by_kakao" = "Connected with Kakaotalk";
+"account_setting_screen_label_connected_by_line" = "Connected with Facebook";
+"account_setting_screen_label_connected_by_twitter" = "Connected with Twitter";
+"account_setting_screen_label_signout" = "Log out";
+"account_setting_screen_title" = "Account settings";

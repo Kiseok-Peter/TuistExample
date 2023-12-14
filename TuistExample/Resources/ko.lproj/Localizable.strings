@@ -1,0 +1,11 @@
+"account_screen_description_error_email" = "이메일 형식이 올바르지 않습니다";
+"account_screen_description_error_password" = "비밀번호 형식이 올바르지 않습니다";
+"account_setting_popup_title_signout" = "로그아웃 하시겠습니까?\n친구들과의 대화 내용이 사라져요";
+"account_setting_screen_label_connected_by_apple" = "Apple로 연결됨";
+"account_setting_screen_label_connected_by_facebook" = "페이스북으로 연결됨";
+"account_setting_screen_label_connected_by_kakao" = "카카오톡으로 연결됨";
+"account_setting_screen_label_connected_by_line" = "LINE로 연결됨";
+"account_setting_screen_label_connected_by_twitter" = "Twitter로 연결됨";
+"account_setting_screen_label_signout" = "로그아웃";
+"account_setting_screen_title" = "계정 설정";
+"account" = "Account";
