@@ -12,9 +12,6 @@ let targets = [Target(name: name,
                       bundleName: organizationName,
                       sources: [
                         "Sources/**"
-                      ],
-                      resources: [
-                        "Resources/**"
                       ]),
                Target(name: "\(name)Tests",
                       product: .unitTests,
