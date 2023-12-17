@@ -1,7 +1,7 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
 import TuistTemplate
-import ResourceSynthesizerStrings
+import StringSynthesizer
 
 let name = "TuistExample"
 let organizationName = "kr.kiseok"
