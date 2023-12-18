@@ -15,9 +15,27 @@ let infoPlist: [String: Plist.Value] = [
     "UILaunchStoryboardName": "LaunchScreen"
 ]
 
+// MARK: - Base Settings
+
+let base: SettingsDictionary = [
+    "GCC_PREPROCESSOR_DEFINITIONS": ["FLEXLAYOUT_SWIFT_PACKAGE=1"],
+    "HEADER_SEARCH_PATHS": .array([
+        "$(inherited)",
+        "$(SRCROOT)/../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/FlexLayout/Sources/YogaKit/include",
+        "$(SRCROOT)/../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/FlexLayout/Sources/YogaKit/include/YogaKit/",
+        "$(SRCROOT)/../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/FlexLayout/Sources/YogaKit/./",
+        "$(SRCROOT)/../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/FlexLayout/Sources/yoga/include",
+        "$(SRCROOT)/../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/FlexLayout/Sources/yoga/include/yoga/",
+        "$(SRCROOT)/../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/FlexLayout/Sources/yoga/./",
+        "$(SRCROOT)/../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/FlexLayout/Sources/Swift/include/yoga/",
+        "$(SRCROOT)/../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/FlexLayout/Sources/Swift/"
+    ])
+]
+
 // MARK: - Configurations
 
 let configurations = Configuration.default([
+    .debug(name: .debug, settings: ["GCC_PREPROCESSOR_DEFINITIONS": ["DEBUG=1", "FLEXLAYOUT_SWIFT_PACKAGE=1"]]),
     .release(name: "DebugView", settings: ["SWIFT_OPTIMIZATION_LEVEL": "-Onone"])
 ])
 
@@ -37,9 +55,12 @@ let targets = [Target(name: name,
                       dependencies: [
                         .project(target: "TuistExampleKit", path: .relativeToRoot("Modules/TuistExampleKit")),
                         .project(target: "TuistExampleUI", path: .relativeToRoot("Modules/TuistExampleUI")),
-                        .project(target: "CommonFoundation", path: .relativeToRoot("Modules/Common/CommonFoundation"))
+                        .project(target: "CommonFoundation", path: .relativeToRoot("Modules/Common/CommonFoundation")),
+                        .external(name: "FlexLayout"),
+                        .external(name: "PinLayout"),
                       ],
-                      settings: .settings(configurations: configurations)),
+                      settings: .settings(base: base,
+                                          configurations: configurations)),
                Target(name: "\(name)Tests",
                       destinations: .iOS,
                       product: .unitTests,
